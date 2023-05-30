@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sculpture Management System</title>
+	<style>
+		/* Styling for the header */
+		header {
+			background-color: #2cbbd4;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 36px;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			background: url('images/sculpture.jpg') center center/cover no-repeat;
+		}
+
+		/* Styling for the navigation menu */
+		nav {
+			background-color: #75f321;
+			padding: 20px;
+			overflow: hidden;
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			background: url('images/background.jpg') center center/cover no-repeat;
+			
+			
+		}
+        nav form {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 25px;
+}
+
+
+nav input[type="text"] {
+  padding: 3px;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  width: 150px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+}
+
+nav button[type="submit"] {
+  background-color: #fff;
+  color: #2196f3;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+ 
+}
+
+nav button[type="submit"]:hover {
+  background-color: #2196f3;
+  color: #fff;
+  
+}
+
+
+		nav a {
+			display: inline-block;
+			padding: 10px;
+			color: white;
+			text-decoration: none;
+			transition: background-color 0.3s ease-in-out;
+			border-radius: 30px;
+			background: #ec55ad;
+			
+		}
+
+		nav a:hover {
+			background-color: #1114d3;
+			color: #fc1515;
+		}
+
+		/* Styling for the hero section */
+		.hero {
+			background-image: url('images/sculpture.jpg');
+			background-size: cover;
+			background-position: center;
+			height: 500px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+
+		.hero h1 {
+			font-size: 48px;
+			color: white;
+			text-align: center;
+			text-shadow: 2px 2px #000;
+			margin: 0;
+			padding: 0;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+		/* Styling for the main content section */
+		.content {
+			padding: 50px;
+			font-size: 24px;
+			line-height: 1.5;
+			background-image: url('images/background.jpg');
+			
+		}
+
+		#searchBy {
+			
+    width: 150px; /* change the value to make the box wider or narrower */
+    height: 30px; /* change the value to make the box taller or shorter */
+    font-size: 18px; /* change the font size to make the text bigger or smaller */
+	border-radius: 25px;
+}
+
+
+		/* Styling for the footer */
+		footer {
+			background-color: #1565c0;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 18px;
+		}
+		input[type="submit"] {
+    width: 100px; /* Change the value to make the button wider or narrower */
+    height: 30px; /* Change the value to make the button taller or shorter */
+    font-size: 18px; /* Change the font size to make the text bigger or smaller */
+	border-radius: 25px;
+}
+
+
+		footer a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.container {
+  display: flex;
+  justify-content: center;
+}
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-field {
+  margin-right: 20px;
+}
+
+#stateSearch {
+  margin-top: 10px;
+}
+
+
+.select-container {
+  margin-right: 10px;
+}
+
+.input-container {
+  margin-right: 10px;
+}
+
+.button-container {
+  margin-left: 10px;
+}
+
+	</style>
+</head>
+<body>
+	<!-- Header -->
+	<header>
+		<h1>Sculpture Management System</h1>
+	</header>
+
+	<!-- Navigation menu -->
+	<nav>
+		<a href="/homewithlogindropdown">Home</a>
+		<a href="/imagepage">Sculptures</a>
+		<a href="#">Artists</a>
+		<a href="/imagegallery">Exhibitions</a>
+		<a href="contact-us.html">Contact</a>
+		<a href="/logout">Logout</a>
+
+		<div class="container">
+			<form action="/search" method="GET">
+				<label for="searchBy">Search By:</label>
+				<select id="searchBy" name="searchBy">
+					<option value="keyword">KEYWORD</option>
+					<option value="state">STATE</option>
+					<option value="t_name">TEMPLE</option>
+				</select>
+				<div id="stateSearch">
+					<label for="search1">State:</label>
+					<input type="text" id="search1" name="search1">
+				</div>
+				<label for="search">Search:</label>
+				<input type="text" id="search" name="search">
+				<input type="submit" value="GO">
+			</form>
+		</div>
+	</nav>
+
+	<!-- Hero section -->
+	<section class="hero">
+		<h1>Discover the beauty of sculpture</h1>
+	</section>
+
+	<!-- Main content section -->
+	<section class="content">
+		<h2>Welcome to the Sculpture Management System</h2>
+		<p>Our system provides a comprehensive database of sculptures, artists, and exhibitions, making it easy for you to explore the world of sculpture. Whether you are a curator, collector, or just a lover of art, our platform can help you find the information you need.</p>
+	</section>
+
+	<script>
+		const searchBy = document.getElementById("searchBy");
+		const stateSearch = document.getElementById("stateSearch");
+
+		// hide the state search box initially
+		stateSearch.style.display = "none";
+
+		// add event listener to show/hide state search box
+		searchBy.addEventListener("change", function () {
+			if (searchBy.value === "state") {
+				stateSearch.style.display = "block";
+			} else {
+				stateSearch.style.display = "none";
+			}
+		});
+
+		// Prevent navigating back to the previous page
+		history.pushState(null, null, location.href);
+		window.addEventListener("popstate", () => {
+			history.pushState(null, null, location.href);
+		});
+	</script>
+</body>
+
+</html>
+

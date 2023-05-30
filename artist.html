@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sculpture Table</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			font-size: 36px;
+			color: #333333;
+		}
+		
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			background-color: #ffffff;
+		}
+		
+		table th {
+			background-color: #f2f2f2;
+			padding: 15px;
+			text-align: center;
+			font-size: 18px;
+			color: #333333;
+			border-bottom: 2px solid #dddddd;
+		}
+		
+		table td {
+			padding: 10px;
+			text-align: center;
+			font-size: 16px;
+			color: #666666;
+			border-bottom: 1px solid #dddddd;
+		}
+		
+		table tr:last-child td {
+			border-bottom: none;
+		}
+		
+		table td img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		@media only screen and (max-width: 600px) {
+			table {
+				width: 100%;
+			}
+			
+			table th,
+			table td {
+				display: block;
+				width: 100%;
+			}
+			
+			table td:first-child {
+				padding-top: 15px;
+				border-top: 2px solid #dddddd;
+			}
+			
+			table td {
+				border-bottom: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>Sculpture Table</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Sculpture</th>
+				<th>Artist</th>
+				<th>Year</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><img src="images/nataraja.jpg" alt="Sculpture 1"></td>
+				<td> Unknown artist from Chola Dynasty</td>
+				<td>11th Century ca</td>
+			</tr>
+			<tr>
+				<td><img src="images/ashoka.jpg" alt="Sculpture 2"></td>
+				<td>Jane Doe</td>
+				<td>2005</td>
+			</tr>
+			<tr>
+				<td><img src="" alt="Sculpture 3"></td>
+				<td>Bob Johnson</td>
+				<td>2010</td>
+			</tr>
+			<tr>
+				<td><img src="https://picsum.photos/id/1025/200/200" alt="Sculpture 4"></td>
+				<td>Alice Williams</td>
+				<td>2015</td>
+			</tr>
+			<tr>
+				<td><img src="https://picsum.photos/id/1027/200/200" alt="Sculpture 5"></td>
+				<td>Mark Brown</td>
+                <td>2016</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

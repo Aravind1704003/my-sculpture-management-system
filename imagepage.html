@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background: url('images/background1.jpg') center center/cover no-repeat;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			padding: 50px;
+		}
+
+		.item {
+			margin: 20px;
+			border: 2px solid #ccc;
+			box-shadow: 5px 5px 5px #ccc;
+			width: 300px;
+			height: 400px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.item img {
+   			 width: 100%;
+    		height: 350px;
+    		object-fit: cover;
+}
+
+
+		.item h2 {
+			margin: 10px;
+			font-size: 24px;
+			text-align: center;
+		}
+
+		.item p {
+			margin: 10px;
+			font-size: 18px;
+			text-align: justify;
+			flex-grow: 1;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>IMAGE GALLERY</h1>
+	<div class="container">
+		<div class="item">
+			<img src="images\lion.jpg" alt="lion">
+			<h2>Image 1</h2>
+			<p>Lion statue pillars in Hindu temple, Kanchipuram, Tamil Nadu, India, Asia</p>
+		</div>
+		<div class="item">
+			<img src="images\thanjore.jpg" alt="thanjore">
+			<h2>Image 2</h2>
+			<p>Built in the year 1010 CE by Chola emperor Rajaraja I in Thanjavur, the temple is popularly known as the Big Temple. It turned 1,000 years old in September 2010..</p>
+		</div>
+		<div class="item">
+			<img src="images\arjuna.jpg" alt="arjuna">
+			<h2>Image 3</h2>
+			<p>South Indian temple relief with hero Arjuna with bow and arrows in hands. Hindu structure 12th century, Halebidu, India.</p>
+		</div>
+		<div class="item">
+			<img src="images\meenakshiinside.jpg" alt="ashoka">
+			<h2>Image 4</h2>
+			<p>Inside of Meenakshi hindu temple in Madurai, Tamil Nadu, South India. It is a twin temple, one of which is dedicated to Meenakshi, and the other to Lord Sundareswarar.</p>
+		</div>
+		<div class="item">
+			<img src="images/ahmedabad.jpg" alt="image5">
+			<h2>Image 5</h2>
+			<p>AHMEDABAD, INDIA - OCTOBER 29, 2016: The womens section of the Hindu Shri Swaminarayan Temple characterised by brightly decorated Burmese teak archways.</p>
+		</div>
+		<div class="item">
+			<img src="images/mahabalipuram.jpg" alt="image6">
+			<h2>Image 6</h2>
+			<p>This carving is one of the largest relief sculptures in the world, measuring 83 x 38 feet,covering most of the faces of two adjoining boulders, with a large cleft in the center.This enigmatic artwork was created during the Pallava Dynasty.
+
+				</p>
+		</div>
+	
+    </div>
+</body>
+</html>

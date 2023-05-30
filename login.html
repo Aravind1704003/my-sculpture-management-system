@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="assests/style.css">
+  </head>
+  <body>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/sculpture.jpg') center center/cover no-repeat;
+    z-index: -1;
+    animation: background-animation 30s infinite linear;
+  }
+  
+  @keyframes background-animation {
+    0% {
+      background-position: center center;
+    }
+    50% {
+      background-position: center 100%;
+    }
+    100% {
+      background-position: center center;
+    }
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 1;
+  }
+  
+  h1 {
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: title-animation 1s ease-in-out;
+  }
+  
+  @keyframes title-animation {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  form {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: form-animation 1s ease-in-out;
+  }
+  
+  @keyframes form-animation {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    width: 100%;
+  }
+  
+  #login-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 20px;
+  }
+  
+  #login-button:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  @media screen and (max-width: 600px) {
+    form {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    h1 {
+      font-size: 28px;
+    }
+  
+    .form-group label {
+      font-size: 16px;
+    }
+  
+    .form-group input {
+      font-size: 14px;
+    }
+  
+    #login-button {
+      font-size: 16px;
+      padding: 10px 15px;
+    }
+  }
+  
+   
+  
+
+    </style>
+    <div class="background"></div>
+    <div class="container">
+      <h1>Sculpture Management System</h1>
+      <form action="/login.html" method="POST">
+
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" id="login-button">Log In</button>
+      </form>
+    </div>
+  </body>
+</html>

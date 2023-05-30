@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sculpture management</title>
+    <style>
+      /* Styles for the header */
+      header {
+        background-color: #4ecdc4;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 32px;
+      }
+      
+      /* Styles for the search bar */
+      #searchbar {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+      }
+      
+      input[type="text"] {
+        padding: 10px;
+        width: 50%;
+        border-radius: 20px;
+        border: none;
+        font-size: 18px;
+      }
+      
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #93d5ee;
+        color: white;
+        font-size: 18px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      
+      /* Styles for the about dropdown */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        padding-left: 5%;
+        margin-right: 20px;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f7fff7;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #93d5ee;
+        color: white;
+      }
+      
+      /* Styles for the body */
+      body {
+        background-color: #f7fff7;
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url('images/sculpture.jpg');
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 0;
+      }
+      
+      /* New styles for added visual appeal */
+      
+      /* Gradient background for the header */
+      header {
+        background-image: linear-gradient(to right, #4ecdc4, #e74061);
+      }
+      
+      /* Box shadow and transition for the search button */
+      button {
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        transition: all 0.2s ease-in-out;
+      }
+      
+      button:hover {
+        transform: scale(1.1);
+      }
+      
+      /* Background color and border for the dropdowns */
+      .dropdown {
+        background-color: #93d5ee;
+        border-radius: 20px;
+        border: 2px solid white;
+      }
+      
+      /* Hover effects for the dropdowns */
+      .dropdown:hover {
+        background-color: white;
+        color: #93d5ee;
+      }
+      
+      .dropdown:hover .dropdown-content a:hover {
+        background-color: #4ecdc4;
+        color: white;
+      }
+
+      #searchbar input[type="text"] {
+  padding: 10px;
+  width: 50%;
+  border-radius: 20px;
+  border: none;
+  font-size: 18px;
+}
+
+#searchbar button {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #93d5ee;
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+input[type="text"] {
+  border: 1px solid black;
+  border-radius: 10px;
+  color: white;
+}
+
+
+#searchbar button:hover {
+  background-color: #f8a7dd;
+  transform: scale(1.1);
+}
+
+
+  .container {
+    text-align: center;
+  }
+  
+  form {
+    display: inline-block;
+    border: 3px solid #43d43e;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #0a0202;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  select,
+  input[type="text"],
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #ebdec2;
+  }
+  
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23ccc' d='M17.293 9.293l-5-5a1 1 0 0 0-1.414 1.414L14.586 9H7a1 1 0 1 0 0 2h7.586l-4.707 4.707a1 1 0 1 0 1.414 1.414l5-5a1 1 0 0 0 0-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  input[type="submit"] {
+    background-color: #0080ff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0059b3;
+  }
+  
+</style>
+
+  </head>
+  <body>
+    <!-- Header with site title and slogan -->
+    <header>
+      <h1>SCULPTURE MANAGEMENT SYSTEM</h1>
+      <p>"WELCOME TO ADMIN LOGIN."</p>
+    </header>
+
+    <div class="container">
+      <div class="dropdown">
+        <a href="#">MASTER</a>
+        <div class="dropdown-content">
+          <a href="/gettemple.html">ADD TEMPLE</a>
+          <a href="/gettemplelogin.html">ADD TEMPLE LOGIN</a>
+          <a href="/getcity.html">ADD CITY</a>
+          <a href="/getsculpture.html">ADD SCULPTURE</a>
+          <a href="/getmaterial.html">ADD MATERIAL</a>
+        </div>
+      </div>
+      <form action="/search" method="GET">
+      <label for="searchBy">Search By:</label>
+      <select id="searchBy" name="searchBy">
+        <option value="keyword">KEYWORD</option>
+        <option value="state">STATE</option>
+        <option value="t_name">TEMPLE</option>
+      </select>
+      <div id="stateSearch">
+        <label for="search1">State:</label>
+        <input type="text" id="search1" name="search1">
+      </div>
+      <label for="search">Search:</label>
+      <input type="text" id="search" name="search">
+      <input type="submit" value="GO">
+      </form>
+      <div class="dropdown">
+        <a href="#">REPORT</a>
+        <div class="dropdown-content">
+          <a href="/viewtemple">VIEW TEMPLE Table</a>
+          <a href="/viewcity">VIEW CITY Table</a>
+          
+          <a href="/viewmaterial">VIEW MATERIAL Table</a>
+          <a href="/templeview">LIST OF TEMPLES</a> 
+        <a href="/templestate">TEMPLE ROUTES STATEWISE</a> 
+        <a href="/sculptureview">LIST OF SCULPTURES</a> 
+        <a href="/sculpturestate">SCULPTURE ROUTES STATEWISE</a> 
+        <a href="/sculpturetemple">LIST OF TEMPLE,SCULPTURE</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+      
+      <script>
+      const searchBy = document.getElementById("searchBy");
+      const stateSearch = document.getElementById("stateSearch");
+      
+      // hide the state search box initially
+      stateSearch.style.display = "none";
+      
+      // add event listener to show/hide state search box
+      searchBy.addEventListener("change", function() {
+        if (searchBy.value === "state") {
+        stateSearch.style.display = "block";
+        } else {
+        stateSearch.style.display = "none";
+        }
+      });
+      </script>
+      
+  
+  
+    
+    <!-- Dropdowns for Modify and View -->
+    <!-- <div style="display: flex; justify-content: center; margin: 5px;"> -->
+     
+      
+    
+  </body>
+</html>
+

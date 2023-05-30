@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud node.js</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h3>SCULPTURE MANAGEMENT SYSTEM</h3>
+
+<table>
+    <thead>
+        <tr>
+            <td>userid</td>
+            <td>username_name</td>
+            <td>EDIT</td>
+            <td>DELETE</td>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rows }}
+        <tr>
+           
+            <td>{{this.}}</td>
+            <td>{{this.state_name}}</td>
+            <td><a class="edit" href="/editstate/{{this.state_id}}">EDIT</a></td>
+            <td><a onclick="return confirm('ARE YOU SURE?')" class="delete" href="/deletestate/{{this.state_id}}">DELETE</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</body>
+</html>

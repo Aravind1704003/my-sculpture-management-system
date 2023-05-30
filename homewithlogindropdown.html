@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Home Page</title>
+    <style>
+      body {
+        background: url('images/e.jpg') center center/cover no-repeat;          
+  background-color: #f7f7f7;
+  color: #3583aa;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+
+nav {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navigation li {
+  margin-right: 20px;
+  border-radius: 25px;
+  background: #1f43e2;
+}
+
+.navigation li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+}
+
+.navigation li a:hover {
+  text-decoration: underline;
+  background-color: orchid;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color:lightsalmon;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  position: absolute;
+  right: 0px;
+}
+
+.hero {
+  background: url('images/e.jpg') center center/cover no-repeat;
+  text-align: center;
+  padding: 100px 0;
+  color: #d8f258;
+  
+}
+
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-top: 20px;
+}
+h1, p {
+  background-image: url('images/background1.jpg'); /* Replace with your image path */
+  background-color: #f9f9f9; /* Replace with your desired background color */
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid #dd2525;
+  font-size: 24px;
+  color: #333; /* Replace with your desired font color */
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo-container">
+        <img src="images/logo.jpg" alt="Logo" class="logo">
+        <h1 class="site-title">SCULPTURE MANAGEMENT SYSTEM
+        </h1>
+      </div>
+      <ul class="navigation">
+        <li><a href="homewithlogindropdown">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+   
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Login</a>
+          <div class="dropdown-content">
+            <a href="login.html">User Login</a>
+            <a href="login2.html">Admin Login</a>
+            <a href="/templelogin.html">Temple Login</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Welcome </h1><br>
+      <p>DISCOVER THE BEAUTY OF THE SCULPTURES
+        .</p>
+    </div>
+   
+  </body>
+</html>

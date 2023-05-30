@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Search Results</title>
+  <style>
+   /* Define the keyframes */
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Apply the animation to the body */
+body {
+  background-image: url('images/background1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: backgroundAnimation;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+    tr:nth-child(even){background-color: #f2f2f2}
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    td {
+      background-color: #fff;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 24px;
+    }
+    p {
+      text-align: center;
+      margin-top: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      color: #666;
+    }
+    img {
+      max-width: 200px;
+      max-height: 200px;
+    }
+    h1{
+      font-size: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Search Results</h1>
+  <% if (results.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Sculpture ID</th>
+          <th>Image</th>
+        
+          <th>Sculpture Name</th>
+          <th>Temple name</th>
+          <th>State</th>
+          <th>City</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach((result) => { %>
+          <tr>
+            <td style="border-right: none;"><%= result.sculptureid %></td>
+            <td><img src="data:image/jpeg;base64, <%= result.image.toString('base64') %>" alt="Temple Image" /></td>
+            <td><%= result.sculpturename %></td>
+            <td><%= result.t_name %></td>
+            <td><%= result.state %></td>
+            <td style="border-right: none;"><%= result.city %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p>No results found.</p>
+  <% } %>
+</body>
+</html>
